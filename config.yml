@@ -1,0 +1,121 @@
+##############################################
+#                 GLOBAL                     #
+##############################################
+
+ChatDelay: true
+#ChatDelay - is responsible for the chat delay, i.e. every how many seconds the player can write, select this option if you want this feature to work
+
+ChatDelayInSeconds: 3
+#ChatDelayInSeconds - seconds for ChatDelay
+#If Chat Delay is disabled, this doesn't work
+
+ChatFormatting: true
+#If this option is true, you can use BuiltIn feature: ChatFormatting:
+# Your message: &7&lChat&b&lFormatting&n!
+
+DebugModeLevel: 0
+#Feature in progress, this can help me a lot with founding a bugs and helping you guys <3
+
+
+##############################################
+#                MESSAGES                    #
+##############################################
+
+
+Error: '&c&lERROR >>'
+#Prefix for error
+
+Use: '&c&lUsage: &7/chat <off,on,clear,reload,help>'
+#This message will show when player(admin) write /chat
+
+Permission: '&7&lYou need <*permission*> to do it.'
+#This message will show when player without permission try /chat
+
+ChatDelayWarn: '&7&lYou can talk again in <*seconds*> seconds'
+#This message will show when player get ChatDelayed
+#If Chat Delay is disabled, this doesn't work
+
+YouCantChat: '&7&lYou cant chat, because chat is off'
+#This message will show when - /chat off is on, and player without permission: 'wow.chat.bypass.delay' try to talk
+
+GlobalChatTurnOn: '&7&lChat was turned on by: <*playerchat*>'
+#This message will show when you turn on chat - /chat on
+
+GlobalChatTurnOff: '&7&lChat was turned off by: <*playerchat*>'
+#This message will show when you turn off chat - /chat off
+
+ChatTurnOff: '&7You turn off chat'
+#This message is showing to you when you turn off chat - /chat off
+
+ChatTurnOn: '&7You turn on chat'
+#This message is showing to you when you turn on chat - /chat on
+
+ChatOn: '&7Chat already turned on!'
+#This message will show, when player(admin) try to /chat on, but its already turn on
+
+ChatOff: '&7Chat already turned off!'
+#This message will show, when player(admin) try to /chat on, but its already turn off
+
+ReloadSuccess: '&7&lConfig reloaded!'
+#This message will show, when player(admin) try to /chat reload
+
+ChatClear:
+  Line1: '&7Chat'
+  Line2: '&cYourserver.com'
+  Line3: '&c&lCleared'
+  Line4: '&cThanks for playing'
+  Line5: '&7Y&bo&an &muse &rform&kating &8lll'
+#This lines of message will show when player(admin) try to /chat clear
+#You can use BuiltIn placeholders:
+#Put '' for blank line
+#DONT REMOVE LINES!!!
+
+
+##############################################
+#              IN NEXT UPDATES               #
+##############################################
+
+#I wanna add this commands in nexts update, please be patient!
+AutoMessagesOn:
+AutoMessagesInterval:
+AutoMessages:
+  Text1:
+  Text2:
+  Text3:
+  Text4:
+  Text5:
+  Text6:
+UnicodeEmojis: true
+
+##############################################
+#                 TO DO                      #
+##############################################
+
+
+#- config and messages.yml support, so you can customize the plugin more to your needs (BETA 0.3)
+#- custom join/leave message (customizable in messages.yml :LOL:)
+#- anti this same message
+#- anti writing without movement
+#- commands delay
+#- custom commands like: /broadcast, /stream, /event
+#- more, more and more
+
+
+##############################################
+#                 PLUGIN                     #
+##############################################
+
+
+#         WowChat - inspired by every chat's plugin
+#/////////////////////////////////////////////////////////////
+#               Created and edited by: OpKarol
+#/////////////////////////////////////////////////////////////
+#                  All rights reserved
+#/////////////////////////////////////////////////////////////
+#Version: Beta 0.3 -                         #
+#            The CONFIG UPDATE               #
+#              BETA ACCESS                   #
+#          FREEEEEEEEEEEEEEEEEEEE            #
+##############################################
+#                   END                      #
+##############################################

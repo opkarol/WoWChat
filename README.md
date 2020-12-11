@@ -1,2 +1,4 @@
 # WoWChat
-A minecraft plugin
+A minecraft plugin for managing chat
+
+

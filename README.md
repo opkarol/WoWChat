@@ -12,7 +12,8 @@ Last Built: Bv0.3.1
 # To Do in Bv0.3:
 - GUI, 3 options - turn off and on chat, clear chat
 - /chat help
-
+# To fix:
+- Big letter...
 
 
 

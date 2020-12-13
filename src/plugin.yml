@@ -1,0 +1,20 @@
+name: WoWChat
+version: BETA-0.3
+main: me.opkarol.main.Main
+description: WoWChat - THE CONFIG UPDATE
+author: OpKarol
+softdepend: [PlaceholderAPI]
+
+commands:
+  chat:
+
+permissions:
+  wow.chat.bypass:
+    description: Bypassing /chat off
+    default: op
+  wow.chat.admin:
+    description: The ability to manage the chat
+    default: op
+  wow.chat.bypass.delay:
+    description: Bypassing chat delay
+    default: op

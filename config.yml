@@ -28,20 +28,20 @@ Error: '&c&lERROR >>'
 Use: '&c&lUsage: &7/chat <off,on,clear,reload,help>'
 #This message will show when player(admin) write /chat
 
-Permission: '&7&lYou need <*permission*> to do it.'
+Permission: '&7&lYou need %permission% to do it.'
 #This message will show when player without permission try /chat
 
-ChatDelayWarn: '&7&lYou can talk again in <*seconds*> seconds'
+ChatDelayWarn: '&7&lYou can talk again in %seconds% seconds'
 #This message will show when player get ChatDelayed
 #If Chat Delay is disabled, this doesn't work
 
 YouCantChat: '&7&lYou cant chat, because chat is off'
 #This message will show when - /chat off is on, and player without permission: 'wow.chat.bypass.delay' try to talk
 
-GlobalChatTurnOn: '&7&lChat was turned on by: <*playerchat*>'
+GlobalChatTurnOn: '&7&lChat was turned on by: %playerchat%'
 #This message will show when you turn on chat - /chat on
 
-GlobalChatTurnOff: '&7&lChat was turned off by: <*playerchat*>'
+GlobalChatTurnOff: '&7&lChat was turned off by: %playerchat%'
 #This message will show when you turn off chat - /chat off
 
 ChatTurnOff: '&7You turn off chat'
@@ -87,6 +87,19 @@ AutoMessages:
   Text6:
 UnicodeEmojis: true
 
+JoinMessage:
+  Join1: ''
+  Join2: ''
+  Join3: ''
+  Join4: ''
+  Join5: ''
+
+LeaveMessage:
+  Leave1: ''
+  Leave2: ''
+  Leave3: ''
+  Leave4: ''
+  Leave5: ''
 ##############################################
 #                 TO DO                      #
 ##############################################
@@ -99,6 +112,14 @@ UnicodeEmojis: true
 #- commands delay
 #- custom commands like: /broadcast, /stream, /event
 #- more, more and more
+##############################################
+#               PLACEHOLDERS                 #
+##############################################
+
+
+# %playerchat%
+# %seconds%
+# %permission%
 
 
 ##############################################
@@ -112,9 +133,11 @@ UnicodeEmojis: true
 #/////////////////////////////////////////////////////////////
 #                  All rights reserved
 #/////////////////////////////////////////////////////////////
-#Version: Beta 0.3 -                         #
+#            Version: Beta 0.3.A -           #
 #            The CONFIG UPDATE               #
+#                                            #
 #              BETA ACCESS                   #
+#                                            #
 #          FREEEEEEEEEEEEEEEEEEEE            #
 ##############################################
 #                   END                      #

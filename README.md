@@ -4,7 +4,7 @@ A minecraft plugin for managing chat
 Last version of config you can see in config.yml file <p> <p>
 Last Config Version: Beta 0.3<p>
 Last Version: BETA v.0.3<p>
-Last Built: Bv0.3.1
+Last Built: Bv0.3.2
 # Discord: https://discord.gg/24fvYGNR52
   
 # Added in Bv0.3.1:
@@ -16,7 +16,7 @@ Last Built: Bv0.3.1
 - ChatColors option,
 - GUI for ChatColors
 # To fix:
-- Big letter...
+- Big letter... - (fixed)
 
 
 

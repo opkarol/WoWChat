@@ -1,5 +1,6 @@
 package me.opkarol.main;
 import JoinLeave.Join;
+import JoinLeave.Leave;
 import Komendy.Chat;
 import Listners.AntyZleSlowa;
 import Listners.ChatDelay;
@@ -20,7 +21,7 @@ public class Main extends JavaPlugin implements Listener {
     AntyZleSlowa antyslowa;
     Kolorki kolorki;
     Join join;
-
+    Leave leave;
     public Main() {
     }
 
@@ -34,6 +35,7 @@ public class Main extends JavaPlugin implements Listener {
         this.chat = new Chat(this);
         this.chatDelay = new ChatDelay(this);
         this.join = new Join(this);
+        this.leave = new Leave(this);
         saveDefaultConfig();
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             this.getLogger().warning("Register PlaceHolderAPI to WoWChat");

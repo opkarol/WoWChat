@@ -100,10 +100,17 @@ LeaveMessage:
   Leave3: ''
   Leave4: ''
   Leave5: ''
+
+words: fuck;shit;asshole #Add here words after ; e.g: a;b;c;d
+cancelEvent: true #Set True, if you want cancel sending message, after saying "words"
+messages:
+  kick: 'You are kicked for writing "%WORD%!' #Don't work for now
+  warnadmin: '%PLAYER% writed "%MESSAGE%!'
+  warnplayer: '&cDont write &7&l%MESSAGE%!'
+kickoncensor: false #Don't work for now
 ##############################################
 #                 TO DO                      #
 ##############################################
-
 
 #- config and messages.yml support, so you can customize the plugin more to your needs (BETA 0.3)
 #- custom join/leave message (customizable in messages.yml :LOL:)
@@ -112,11 +119,14 @@ LeaveMessage:
 #- commands delay
 #- custom commands like: /broadcast, /stream, /event
 #- more, more and more
+
 ##############################################
 #               PLACEHOLDERS                 #
 ##############################################
 
-
+# %PLAYER%
+# %MESSAGE%
+# %WORD%
 # %playerchat%
 # %seconds%
 # %permission%
@@ -133,7 +143,7 @@ LeaveMessage:
 #/////////////////////////////////////////////////////////////
 #                  All rights reserved
 #/////////////////////////////////////////////////////////////
-#            Version: Beta 0.3 -             #
+#            Version: Beta 0.3.A -           #
 #            The CONFIG UPDATE               #
 #                                            #
 #              BETA ACCESS                   #

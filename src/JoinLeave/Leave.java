@@ -19,26 +19,26 @@ public class Leave implements Listener {
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
-    public void onJoin(PlayerQuitEvent event) {
+    public void onLeave(PlayerQuitEvent event) {
         Player p = event.getPlayer();
         if(p.hasPermission("Leave1")){
-            String LeaveText = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Main.plugin.getConfig().getString("JoinMessage.Leave1")));
+            String LeaveText = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Main.plugin.getConfig().getString("LeaveMessage.Leave1")));
             event.setQuitMessage(PlaceholderAPI.setPlaceholders(event.getPlayer(), LeaveText));
         }
         if(p.hasPermission("Leave2")){
-            String LeaveText = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Main.plugin.getConfig().getString("JoinMessage.Leave2")));
+            String LeaveText = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Main.plugin.getConfig().getString("LeaveMessage.Leave2")));
             event.setQuitMessage(PlaceholderAPI.setPlaceholders(event.getPlayer(), LeaveText));
         }
         if(p.hasPermission("Leave3")) {
-            String LeaveText = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Main.plugin.getConfig().getString("JoinMessage.Leave3")));
+            String LeaveText = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Main.plugin.getConfig().getString("LeaveMessage.Leave3")));
             event.setQuitMessage(PlaceholderAPI.setPlaceholders(event.getPlayer(), LeaveText));
         }
         if(p.hasPermission("Leave4")){
-            String LeaveText = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Main.plugin.getConfig().getString("JoinMessage.Leave4")));
+            String LeaveText = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Main.plugin.getConfig().getString("LeaveMessage.Leave4")));
             event.setQuitMessage(PlaceholderAPI.setPlaceholders(event.getPlayer(), LeaveText));
         }
         if(p.hasPermission("Leave5")){
-            String LeaveText = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Main.plugin.getConfig().getString("JoinMessage.Leave5")));
+            String LeaveText = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Main.plugin.getConfig().getString("LeaveMessage.Leave5")));
             event.setQuitMessage(PlaceholderAPI.setPlaceholders(event.getPlayer(), LeaveText));
         }
 

@@ -66,7 +66,7 @@ public class Chat implements Listener, CommandExecutor {
                     return true;
                 }
                 else if (args[0].equalsIgnoreCase("help")) {
-                    p.sendMessage(ChatColor.RED + "Help: --> (In Progress)");
+                    p.sendMessage(ChatColor.RED + "><-----Help-----><");
                 }
                 else if (args[0].equalsIgnoreCase("reload")) {
                     Main.plugin.reloadConfig();

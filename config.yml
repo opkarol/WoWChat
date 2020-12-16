@@ -10,13 +10,19 @@ ChatDelayInSeconds: 3
 #If Chat Delay is disabled, this doesn't work
 
 ChatFormatting: true
+#Permission: 'wow.chat.colorcodes'
 #If this option is true, you can use BuiltIn feature: ChatFormatting:
-# Your message: &7&lChat&b&lFormatting&n!
+#Your message can be: &7&lChat&b&lFormatting&n!
+
+UnicodeEmojis: true
+#Permission: 'wow.chat.unicodeemojis'
+#You can use Emojis in chat e.g:
+#<3 changing to ❤
+#:star: changing to ★
+#Full list in /chat help
 
 DebugModeLevel: 0
 #Feature in progress, this can help me a lot with founding a bugs and helping you guys <3
-
-
 ##############################################
 #                MESSAGES                    #
 ##############################################
@@ -75,7 +81,7 @@ ChatClear:
 #              IN NEXT UPDATES               #
 ##############################################
 
-#I wanna add this commands in nexts update, please be patient!
+#I want add this commands in nexts update, please be patient!
 AutoMessagesOn:
 AutoMessagesInterval:
 AutoMessages:
@@ -85,25 +91,34 @@ AutoMessages:
   Text4:
   Text5:
   Text6:
-UnicodeEmojis: true
 
+Join:
+  enable: false
 JoinMessage:
-  Join1: ''
-  Join2: ''
-  Join3: ''
-  Join4: ''
-  Join5: ''
-
+  Join1: '' #Permission: wowchat.custom.Join1, you can give this permission to OWNER, and change to him prefix
+  Join2: '' #Permission: wowchat.custom.Join2, you can give this permission to AD,OM, and change to him prefix
+  Join3: '' #Permission: wowchat.custom.Join3, you can give this permission to MOD, and change to him prefix
+  Join4: '' #Permission: wowchat.custom.Join4, you can give this permission to HELPER, and change to him prefix
+  Join5: '' #Permission: wowchat.custom.Join5, you can give this permission to MEMBER, and change to him prefix
+Leave:
+  enable: false
 LeaveMessage:
-  Leave1: ''
-  Leave2: ''
-  Leave3: ''
-  Leave4: ''
-  Leave5: ''
+  Leave1: '' #Permission: wowchat.custom.Leave1, you can give this permission to OWNER, and change to him prefix
+  Leave2: '' #Permission: wowchat.custom.Leave2, you can give this permission to ADMIN, and change to him prefix
+  Leave3: '' #Permission: wowchat.custom.Leave3, you can give this permission to MOD, and change to him prefix
+  Leave4: '' #Permission: wowchat.custom.Leave4, you can give this permission to HELPER, and change to him prefix
+  Leave5: '' #Permission: wowchat.custom.Leave5, you can give this permission to MEMBER, and change to him prefix
+
+words: fuck;shit;asshole #Add here words after ; e.g: a;b;c;d
+cancelEvent: true #Set True, if you want cancel sending message, after saying "words"
+messages:
+  kick: 'You are kicked for writing "%WORD%!' #Don't work for now
+  warnadmin: '%PLAYER% writed "%MESSAGE%!'
+  warnplayer: '&cDont write &7&l%MESSAGE%!'
+kickoncensor: false #Don't work for now
 ##############################################
 #                 TO DO                      #
 ##############################################
-
 
 #- config and messages.yml support, so you can customize the plugin more to your needs (BETA 0.3)
 #- custom join/leave message (customizable in messages.yml :LOL:)
@@ -112,15 +127,18 @@ LeaveMessage:
 #- commands delay
 #- custom commands like: /broadcast, /stream, /event
 #- more, more and more
+
 ##############################################
 #               PLACEHOLDERS                 #
 ##############################################
 
-
+# %PLAYER%
+# %MESSAGE%
+# %WORD%
 # %playerchat%
 # %seconds%
 # %permission%
-
+# PlaceholderAPI: https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders
 
 ##############################################
 #                 PLUGIN                     #
@@ -133,7 +151,8 @@ LeaveMessage:
 #/////////////////////////////////////////////////////////////
 #                  All rights reserved
 #/////////////////////////////////////////////////////////////
-#            Version: Beta 0.3.A -           #
+#            DON'T CHANGE THIS!
+             ConfigVersion: 'Beta 0.3.B'
 #            The CONFIG UPDATE               #
 #                                            #
 #              BETA ACCESS                   #

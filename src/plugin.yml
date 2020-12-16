@@ -1,7 +1,7 @@
 name: WoWChat
-version: BETA-0.4
+version: BETA-0.5
 main: me.opkarol.main.Main
-description: WoWChat - THE CONFIG UPDATE
+description: WoWChat - THE WORDS UPDATE
 author: OpKarol
 softdepend: [PlaceholderAPI]
 

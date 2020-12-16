@@ -57,7 +57,7 @@ public class Chat implements Listener, CommandExecutor {
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.plugin.getConfig().getString("Error") + " " + Main.plugin.getConfig().getString("ChatOn")));
                         return false;
                     } else if (args[0].equalsIgnoreCase("gui")) {
-                        p.sendMessage("INCOMING IN Bv0.5");
+                        p.sendMessage("INCOMING IN Bv0.6");
                     } else if (args[0].equalsIgnoreCase("off")) {
                         if (chat) {
                             chat = false;

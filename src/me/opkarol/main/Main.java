@@ -8,7 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.Objects;
 
 public class Main extends JavaPlugin implements Listener {
-    String LastConfigVersion = "Beta 0.3.B";
+    String LastConfigVersion = "Beta 0.5";
     public static Main plugin;
     AntyZleSlowa ZleSlowa;
     Chat chat;

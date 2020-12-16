@@ -1,19 +1,15 @@
 package me.opkarol.main;
-import JoinLeave.Join;
-import JoinLeave.Leave;
+import Listners.*;
 import Komendy.Chat;
-import Listners.AntyZleSlowa;
-import Listners.ChatDelay;
-import Listners.Kolorki;
-import Listners.Kropka;
 import org.bukkit.Bukkit;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public class Main extends JavaPlugin implements Listener {
+    String LastConfigVersion = "Beta 0.3.B";
     public static Main plugin;
-    public FileConfiguration getConfig = getConfig();
     AntyZleSlowa ZleSlowa;
     Chat chat;
     ChatDelay chatDelay;
@@ -24,7 +20,9 @@ public class Main extends JavaPlugin implements Listener {
     Leave leave;
     public Main() {
     }
-
+    public String getConfigString(){
+        return LastConfigVersion;
+    }
     @Override
     public void onEnable() {
         plugin = this;
@@ -36,13 +34,16 @@ public class Main extends JavaPlugin implements Listener {
         this.chatDelay = new ChatDelay(this);
         this.join = new Join(this);
         this.leave = new Leave(this);
-        saveDefaultConfig();
-        if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
-            this.getLogger().warning("Register PlaceHolderAPI to WoWChat");
-            Bukkit.getPluginManager().registerEvents(this, this);
+        Main.plugin.saveDefaultConfig();
+        if (Objects.equals(Main.plugin.getConfig().getString("ConfigVersion"), LastConfigVersion)) {
+            Bukkit.getConsoleSender().sendMessage("[WOWCHAT] You have the newest version of config :)");
         } else {
-            this.getLogger().warning("Could not find PlaceholderAPI! This plugin is required if you want PLACEHOLDERS.");
+            Bukkit.getConsoleSender().sendMessage("[WOWCHAT] You must download new version of config :(");
         }
-
+        if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            Bukkit.getConsoleSender().sendMessage("[WOWCHAT] Register PlaceHolderAPI to WoWChat");
+        } else {
+            Bukkit.getConsoleSender().sendMessage("[WOWCHAT] Could not find PlaceholderAPI! This plugin is required if you want PLACEHOLDERS.");
+        }
     }
 }

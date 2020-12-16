@@ -10,19 +10,36 @@ ChatDelayInSeconds: 3
 #If Chat Delay is disabled, this doesn't work
 
 ChatFormatting: true
+#Permission: 'wow.chat.colorcodes'
 #If this option is true, you can use BuiltIn feature: ChatFormatting:
-# Your message: &7&lChat&b&lFormatting&n!
+#Your message can be: &7&lChat&b&lFormatting&n!
+
+UnicodeEmojis: true
+#Permission: 'wow.chat.unicodeemojis'
+#You can use Emojis in chat e.g:
+#<3 changing to ❤
+#:star: changing to ★
+#Full list in /chat help
 
 DebugModeLevel: 0
 #Feature in progress, this can help me a lot with founding a bugs and helping you guys <3
 
+words: fuck;shit;asshole
+#Add here words after ; e.g: a;b;c;d
+
+cancelEvent: true
+#Set True, if you want cancel sending message, after saying "words"
+
+ACPrefix: '@'
+#Prefix for AdminChat
+#When you change the value of prefix, you must reload or restart your server
 
 ##############################################
 #                MESSAGES                    #
 ##############################################
 
 
-Error: '&c&lERROR >>'
+Error: '&c&lERROR >> '
 #Prefix for error
 
 Use: '&c&lUsage: &7/chat <off,on,clear,reload,help>'
@@ -60,22 +77,30 @@ ReloadSuccess: '&7&lConfig reloaded!'
 #This message will show, when player(admin) try to /chat reload
 
 ChatClear:
-  Line1: '&7Chat'
-  Line2: '&cYourserver.com'
-  Line3: '&c&lCleared'
-  Line4: '&cThanks for playing'
-  Line5: '&7Y&bo&an &muse &rform&kating &8lll'
+  Line1: ''
+  Line2: '&8&l<&m-&r&8&l> &B&lCHAT &8&l<&m-&r&8&l>'
+  Line3: '&8&l<&m-&r&8&l> &C&LWAS CLEARED BY: %PLAYER% &8&l<&m-&r&8&l>'
+  Line4: '&8&l<&m-&r&8&l> &e&lserver.com &8&l<&m-&r&8&l>'
+  Line5: ''
 #This lines of message will show when player(admin) try to /chat clear
 #You can use BuiltIn placeholders:
 #Put '' for blank line
 #DONT REMOVE LINES!!!
 
 
+messages:
+  warnadmin: '%PLAYER% writed %MESSAGE%!'
+  warnplayer: '&cDont write &7&l%MESSAGE%!'
+#This message will show when player try to say bad word from list: 'words'
+
+
+AdminChat: '&c&lAC &7- &6&l%PLAYER%&7: &f&l%MESSAGE%'
+#This message will show when player(admin) try to say: @<message>
 ##############################################
 #              IN NEXT UPDATES               #
 ##############################################
 
-#I wanna add this commands in nexts update, please be patient!
+#I want add this commands in nexts update, please be patient!
 AutoMessagesOn:
 AutoMessagesInterval:
 AutoMessages:
@@ -85,29 +110,27 @@ AutoMessages:
   Text4:
   Text5:
   Text6:
-UnicodeEmojis: true
 
+Join:
+  enable: false
 JoinMessage:
-  Join1: ''
-  Join2: ''
-  Join3: ''
-  Join4: ''
-  Join5: ''
-
+  Join1: '' #Permission: wowchat.custom.Join1, you can give this permission to OWNER, and change to him prefix
+  Join2: '' #Permission: wowchat.custom.Join2, you can give this permission to AD,OM, and change to him prefix
+  Join3: '' #Permission: wowchat.custom.Join3, you can give this permission to MOD, and change to him prefix
+  Join4: '' #Permission: wowchat.custom.Join4, you can give this permission to HELPER, and change to him prefix
+  Join5: '' #Permission: wowchat.custom.Join5, you can give this permission to MEMBER, and change to him prefix
+Leave:
+  enable: false
 LeaveMessage:
-  Leave1: ''
-  Leave2: ''
-  Leave3: ''
-  Leave4: ''
-  Leave5: ''
+  Leave1: '' #Permission: wowchat.custom.Leave1, you can give this permission to OWNER, and change to him prefix
+  Leave2: '' #Permission: wowchat.custom.Leave2, you can give this permission to ADMIN, and change to him prefix
+  Leave3: '' #Permission: wowchat.custom.Leave3, you can give this permission to MOD, and change to him prefix
+  Leave4: '' #Permission: wowchat.custom.Leave4, you can give this permission to HELPER, and change to him prefix
+  Leave5: '' #Permission: wowchat.custom.Leave5, you can give this permission to MEMBER, and change to him prefix
 
-words: fuck;shit;asshole #Add here words after ; e.g: a;b;c;d
-cancelEvent: true #Set True, if you want cancel sending message, after saying "words"
-messages:
-  kick: 'You are kicked for writing "%WORD%!' #Don't work for now
-  warnadmin: '%PLAYER% writed "%MESSAGE%!'
-  warnplayer: '&cDont write &7&l%MESSAGE%!'
-kickoncensor: false #Don't work for now
+
+#kickoncensor: false #Don't work for nowmessages:
+#  kick: 'You are kicked for writing "%WORD%!' #Don't work for now
 ##############################################
 #                 TO DO                      #
 ##############################################
@@ -130,7 +153,7 @@ kickoncensor: false #Don't work for now
 # %playerchat%
 # %seconds%
 # %permission%
-
+# PlaceholderAPI: https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders
 
 ##############################################
 #                 PLUGIN                     #
@@ -143,7 +166,8 @@ kickoncensor: false #Don't work for now
 #/////////////////////////////////////////////////////////////
 #                  All rights reserved
 #/////////////////////////////////////////////////////////////
-#            Version: Beta 0.3.A -           #
+#DON'T CHANGE THIS                           #
+ConfigVersion: 'Beta 0.5'
 #            The CONFIG UPDATE               #
 #                                            #
 #              BETA ACCESS                   #

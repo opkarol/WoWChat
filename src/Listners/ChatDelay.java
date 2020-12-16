@@ -21,7 +21,7 @@ public class ChatDelay implements Listener {
         this.plugin = plugin;
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }
-    private HashMap<UUID, Long> delayMap = new HashMap<>();
+    private final HashMap<UUID, Long> delayMap = new HashMap<>();
     @EventHandler
     public void onChat(AsyncPlayerChatEvent event) {
         if(Main.plugin.getConfig().getBoolean ("ChatDelay")){

@@ -8,15 +8,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
-import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.java.JavaPlugin;
-
 
 import java.util.Objects;
 
 public class AntyZleSlowa implements Listener {
     Main plugin;
-    static Plugin pg = JavaPlugin.getPlugin(Main.class);
     public AntyZleSlowa(Main plugin) {
         this.plugin = plugin;
         plugin.getServer().getPluginManager().registerEvents(this, plugin);

@@ -2,7 +2,7 @@
 A minecraft plugin for managing chat
 
 Last version of config you can see in config.yml file <p> <p>
-Last Config Version: Beta 0.3.A<p>
+Last Config Version: Beta 0.3.B<p>
 Last Version: BETA v.0.3<p>
 Last Built: Bv0.3.4
 # Discord: https://discord.gg/24fvYGNR52

@@ -151,8 +151,8 @@ kickoncensor: false #Don't work for now
 #/////////////////////////////////////////////////////////////
 #                  All rights reserved
 #/////////////////////////////////////////////////////////////
-#            DON'T CHANGE THIS!
-             ConfigVersion: 'Beta 0.3.B'
+#DON'T CHANGE THIS                           #
+ConfigVersion: 'Beta 0.3.B'
 #            The CONFIG UPDATE               #
 #                                            #
 #              BETA ACCESS                   #

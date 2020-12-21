@@ -1,4 +1,7 @@
 package me.opkarol.main;
+import GlobalChat.ChatListener;
+import GlobalChat.Global;
+import GlobalChat.GlobalChat;
 import Listners.*;
 import Komendy.Chat;
 import org.bukkit.Bukkit;
@@ -18,6 +21,10 @@ public class Main extends JavaPlugin implements Listener {
     Kolorki kolorki;
     Join join;
     Leave leave;
+    Global global;
+    ChatListener chatListener;
+    GlobalChat globalChat;
+
     public Main() {
     }
     public String getConfigString(){
@@ -34,6 +41,10 @@ public class Main extends JavaPlugin implements Listener {
         this.chatDelay = new ChatDelay(this);
         this.join = new Join(this);
         this.leave = new Leave(this);
+        this.global = new Global(this);
+        this.chatListener = new ChatListener(this);
+        this.globalChat = new GlobalChat(this);
+
         Main.plugin.saveDefaultConfig();
         if (Objects.equals(Main.plugin.getConfig().getString("ConfigVersion"), LastConfigVersion)) {
             Bukkit.getConsoleSender().sendMessage("[WOWCHAT] You have the newest version of config :)");

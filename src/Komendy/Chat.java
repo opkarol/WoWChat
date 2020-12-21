@@ -39,7 +39,9 @@ public class Chat implements Listener, CommandExecutor {
                 if (args.length == 1) {
                     if (args[0].equalsIgnoreCase("clear")) {
                         for (int i = 0; i < 101; ++i) {
-                            p.sendMessage(" ");
+                            for (Player p2 : Bukkit.getOnlinePlayers()) {
+                                p2.sendMessage(" ");
+                            }
                         }
                         Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Main.plugin.getConfig().getString("ChatClear.Line1").replace("%PLAYER%", p.getName()))));
                         Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Main.plugin.getConfig().getString("ChatClear.Line2").replace("%PLAYER%", p.getName()))));
@@ -74,8 +76,9 @@ public class Chat implements Listener, CommandExecutor {
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aChatFormatting&7: &e" + Main.plugin.getConfig().getString("ChatFormatting")));
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aDebugModeLevel&7: &b" + Main.plugin.getConfig().getString("DebugModeLevel")));
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aUnicodeEmojis&7: &e" + Main.plugin.getConfig().getString("UnicodeEmojis")));
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aBlockedWords&7: &e" + Arrays.toString(Objects.requireNonNull(Main.plugin.getConfig().getString("words")).split(";"))));
-
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aBlockedWords&7: &c" + Arrays.toString(Objects.requireNonNull(Main.plugin.getConfig().getString("words")).split(";"))));
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aGlobalChat&7: &e" + Main.plugin.getConfig().getString("GlobalChat.Enabled")));
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aLocalChat&7: &e" + Main.plugin.getConfig().getString("LocalChat.Enabled")));
 
                     } else if (args[0].equalsIgnoreCase("reload")) {
                         Main.plugin.reloadConfig();

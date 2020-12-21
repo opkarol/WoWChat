@@ -13,7 +13,7 @@ import java.util.Objects;
 
 public class Kropka implements Listener {
     Main plugin;
-    public String ACPREFIX = Objects.requireNonNull(Main.plugin.getConfig().getString("ACPrefix"));
+    public String ACPREFIX = Objects.requireNonNull(Main.plugin.getConfig().getString("AC.Prefix"));
     public Kropka(Main plugin) {
         this.plugin = plugin;
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
@@ -36,20 +36,21 @@ public class Kropka implements Listener {
     @EventHandler(priority = EventPriority.HIGH)
     public void onChat(AsyncPlayerChatEvent e) {
         Player p = e.getPlayer();
-        p.sendMessage(ACPREFIX);
-        String Message = e.getMessage();
-        if(!p.hasPermission("wowchat.adminchat") || !p.isOp()){
-            if(Message.startsWith(ACPREFIX)){
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&',Main.plugin.getConfig().getString("Error") + Objects.requireNonNull(Main.plugin.getConfig().getString("Permission")).replace("%permission%", "wowchat.adminchat")));
-                e.setCancelled(true);
-            }
-        } else if(p.hasPermission("wowchat.adminchat") || p.isOp()){
-            if(Message.startsWith(ACPREFIX)){
-                e.setCancelled(true);
-                for(Player p2 : Bukkit.getOnlinePlayers()) {
-                    if (p2.hasPermission("wowchat.adminchat") || p2.isOp()) {
-                        Message = Message.replaceFirst(ACPREFIX, "");
-                        p2.sendMessage(ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Main.plugin.getConfig().getString("AdminChat")).replace("%PLAYER%", p.getDisplayName()).replace("%MESSAGE%", Message)));
+        if(Main.plugin.getConfig().getBoolean("AC.Enable")) {
+            String Message = e.getMessage();
+            if (!p.hasPermission("wowchat.adminchat") || !p.isOp()) {
+                if (Message.startsWith(ACPREFIX)) {
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.plugin.getConfig().getString("Error") + Objects.requireNonNull(Main.plugin.getConfig().getString("Permission")).replace("%permission%", "wowchat.adminchat")));
+                    e.setCancelled(true);
+                }
+            } else if (p.hasPermission("wowchat.adminchat") || p.isOp()) {
+                if (Message.startsWith(ACPREFIX)) {
+                    e.setCancelled(true);
+                    for (Player p2 : Bukkit.getOnlinePlayers()) {
+                        if (p2.hasPermission("wowchat.adminchat") || p2.isOp()) {
+                            Message = Message.replaceFirst(ACPREFIX, "");
+                            p2.sendMessage(ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Main.plugin.getConfig().getString("AdminChat")).replace("%PLAYER%", p.getDisplayName()).replace("%MESSAGE%", Message)));
+                        }
                     }
                 }
             }

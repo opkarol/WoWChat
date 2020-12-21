@@ -19,7 +19,7 @@ UnicodeEmojis: true
 #You can use Emojis in chat e.g:
 #<3 changing to ❤
 #:star: changing to ★
-#Full list in /chat help
+#Full list in https://github.com/opkarol/WoWChat/wiki/Emoji-List
 
 DebugModeLevel: 0
 #Feature in progress, this can help me a lot with founding a bugs and helping you guys <3
@@ -30,7 +30,9 @@ words: fuck;shit;asshole
 cancelEvent: true
 #Set True, if you want cancel sending message, after saying "words"
 
-ACPrefix: '@'
+AC: #AdminChat
+  Enable: true
+  Prefix: '@'
 #Prefix for AdminChat
 #When you change the value of prefix, you must reload or restart your server
 
@@ -128,33 +130,39 @@ LeaveMessage:
   Leave4: '' #Permission: wowchat.custom.Leave4, you can give this permission to HELPER, and change to him prefix
   Leave5: '' #Permission: wowchat.custom.Leave5, you can give this permission to MEMBER, and change to him prefix
 
+LocalChat:
+  Enabled: true
+  Range: 15
+  Messages:
+    Bypass: '&9You are now bypassing localchat. You can hear them, they can not hear you!'
+    NoBypassLonger: '&9You are no longer bypassing localchat.'
+
+GlobalChat:
+  Enabled: true
+  Start: '!G' #Must be a  UpperCase letter, or special character e.g: #, !, %, & but cant be a '/', or be a doubled e.g: !G, &A, *V
+  Prefix: '&8[&3&lGlobal&8]&f&l'
+  ColorMessage: '&a'
+  Message: '%G_Prefix% %PLAYER%:%G_Color% %MESSAGE%'
+  RawConsole:
+    Prefix: '[Global]'
+#You can use Placeholders from PlaceholderAPI here :)
 
 #kickoncensor: false #Don't work for nowmessages:
 #  kick: 'You are kicked for writing "%WORD%!' #Don't work for now
-##############################################
-#                 TO DO                      #
-##############################################
-
-#- config and messages.yml support, so you can customize the plugin more to your needs (BETA 0.3)
-#- custom join/leave message (customizable in messages.yml :LOL:)
-#- anti this same message
-#- anti writing without movement
-#- commands delay
-#- custom commands like: /broadcast, /stream, /event
-#- more, more and more
 
 ##############################################
 #               PLACEHOLDERS                 #
 ##############################################
 
-# %PLAYER%
-# %MESSAGE%
-# %WORD%
-# %playerchat%
-# %seconds%
-# %permission%
+# %PLAYER% - use this placeholder for player name
+# %MESSAGE% - use this placeholder for player message
+# %WORD% - use this placeholder for player word(specific)
+# %playerchat% - use this placeholder for player name who chat
+# %seconds% - use this placeholder for seconds left from chatdelay
+# %permission% - use this placeholder for permission
 # PlaceholderAPI: https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders
-
+# %G_Prefix% - Prefix for Global Chat
+# %G_Color% - Color of global chat player's message
 ##############################################
 #                 PLUGIN                     #
 ##############################################
@@ -168,7 +176,6 @@ LeaveMessage:
 #/////////////////////////////////////////////////////////////
 #DON'T CHANGE THIS                           #
 ConfigVersion: 'Beta 0.5'
-#            The CONFIG UPDATE               #
 #                                            #
 #              BETA ACCESS                   #
 #                                            #

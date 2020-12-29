@@ -19,13 +19,13 @@ public class Kropka implements Listener {
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }
 
-    @EventHandler(priority = EventPriority.HIGHEST)
+    @EventHandler
     public void onChat3(AsyncPlayerChatEvent e) {
         String Wiadomosc = e.getMessage().replace(".","");
         String newMessage2 = Wiadomosc.toLowerCase();
         if(!e.getPlayer().hasPermission("wowchat.bypass.period") || !e.getPlayer().isOp()){
             if (newMessage2.length() > 3) {
-                if (newMessage2.contains(".") || newMessage2.contains("?") || newMessage2.contains("!")) {
+                if (newMessage2.endsWith(".") || newMessage2.contains("?") || newMessage2.contains("!")) {
                     e.setMessage(("" + newMessage2.charAt(0)).toUpperCase() + newMessage2.substring(1));
                 } else {
                     e.setMessage(("" + newMessage2.charAt(0)).toUpperCase() + newMessage2.substring(1) + ".");
@@ -33,7 +33,7 @@ public class Kropka implements Listener {
             }
         }
     }
-    @EventHandler(priority = EventPriority.HIGH)
+    @EventHandler
     public void onChat(AsyncPlayerChatEvent e) {
         Player p = e.getPlayer();
         if(Main.plugin.getConfig().getBoolean("AC.Enable")) {

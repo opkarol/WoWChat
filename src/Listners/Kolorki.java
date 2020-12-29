@@ -17,7 +17,7 @@ public class Kolorki implements Listener {
     }
 
 
-    @EventHandler(priority = EventPriority.HIGH)
+    @EventHandler
     public void onChat(AsyncPlayerChatEvent event2) {
         if(Main.plugin.getConfig().getBoolean("ChatFormatting")){
             Player p = event2.getPlayer();
@@ -28,7 +28,7 @@ public class Kolorki implements Listener {
             }
         }
     }
-    @EventHandler(priority = EventPriority.HIGH)
+    @EventHandler
     public void onChat2(AsyncPlayerChatEvent event2) {
         Player p = event2.getPlayer();
         if(Main.plugin.getConfig().getBoolean("UnicodeEmojis")){

@@ -24,11 +24,8 @@ UnicodeEmojis: true
 DebugModeLevel: 0
 #Feature in progress, this can help me a lot with founding a bugs and helping you guys <3
 
-words: fuck;shit;asshole
-#Add here words after ; e.g: a;b;c;d
-
-cancelEvent: true
-#Set True, if you want cancel sending message, after saying "words"
+words: fuck;shit;asshole;hypixel;hypixel.net;
+#Add here BAD words after ; e.g: a;b;c;d
 
 AC: #AdminChat
   Enable: true
@@ -45,6 +42,9 @@ Error: '&c&lERROR >> '
 #Prefix for error
 
 Use: '&c&lUsage: &7/chat <off,on,clear,reload,help>'
+#This message will show when player(admin) write /chat
+
+ChannelUse: '&c&lUsage: &7/channel <global,local,player,admin>'
 #This message will show when player(admin) write /chat
 
 Permission: '&7&lYou need %permission% to do it.'
@@ -91,9 +91,15 @@ ChatClear:
 
 
 messages:
-  warnadmin: '%PLAYER% writed %MESSAGE%!'
-  warnplayer: '&cDont write &7&l%MESSAGE%!'
+  warnadmin: '%PLAYER% writed %MESSAGE%'
+  warnplayer: '&cDont write &7&l%MESSAGE%'
 #This message will show when player try to say bad word from list: 'words'
+
+kickoncensor: false
+kickmessage: '&c&lYou are kicked for writing: &7&l%WORD%!'
+customcommand: 'mute %PLAYER% 5m'
+#Set '' for nothing
+#This command is making from Console, so its can be every command :)
 
 
 AdminChat: '&c&lAC &7- &6&l%PLAYER%&7: &f&l%MESSAGE%'
@@ -130,16 +136,32 @@ LeaveMessage:
   Leave4: '' #Permission: wowchat.custom.Leave4, you can give this permission to HELPER, and change to him prefix
   Leave5: '' #Permission: wowchat.custom.Leave5, you can give this permission to MEMBER, and change to him prefix
 
-LocalChat:
-  Enabled: true
-  Range: 15
+ChannelSelection:
+  Enabled: false
+  Messages:
+    SelectedGlobal: '&7Selected Global Channel'
+    SelectedLocal: '&7Selected Local Channel'
+    AlreadyOnChannel: '[*ERROR*]&cYou already on this channel' #[*ERROR*], placeholder for displaying ERROR
+
+SpyLocalChat:
+  Enabled: false
   Messages:
     Bypass: '&9You are now bypassing localchat. You can hear them, they can not hear you!'
     NoBypassLonger: '&9You are no longer bypassing localchat.'
 
+LocalChat:
+  Enabled: false
+  Range: 100
+  Start: '!L' #Must be a  UpperCase letter, or special character e.g: #, !, %, &, or be a doubled e.g: !G, &A, *V but cant be a '/'
+  Prefix: '&8[&b&lLocal&8]&f&l'
+  ColorMessage: '&f'
+  Message: '%L_Prefix% %PLAYER%:%L_Color% %MESSAGE%'
+  RawConsole:
+    Prefix: '[Local]'
+
 GlobalChat:
-  Enabled: true
-  Start: '!G' #Must be a  UpperCase letter, or special character e.g: #, !, %, & but cant be a '/', or be a doubled e.g: !G, &A, *V
+  Enabled: false
+  Start: '!G' #Must be a  UpperCase letter, or special character e.g: #, !, %, &, or be a doubled e.g: !G, &A, *V but cant be a '/'
   Prefix: '&8[&3&lGlobal&8]&f&l'
   ColorMessage: '&a'
   Message: '%G_Prefix% %PLAYER%:%G_Color% %MESSAGE%'
@@ -147,8 +169,7 @@ GlobalChat:
     Prefix: '[Global]'
 #You can use Placeholders from PlaceholderAPI here :)
 
-#kickoncensor: false #Don't work for nowmessages:
-#  kick: 'You are kicked for writing "%WORD%!' #Don't work for now
+
 
 ##############################################
 #               PLACEHOLDERS                 #
@@ -163,10 +184,10 @@ GlobalChat:
 # PlaceholderAPI: https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders
 # %G_Prefix% - Prefix for Global Chat
 # %G_Color% - Color of global chat player's message
+
 ##############################################
 #                 PLUGIN                     #
 ##############################################
-
 
 #         WowChat - inspired by every chat's plugin
 #/////////////////////////////////////////////////////////////

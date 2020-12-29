@@ -1,21 +1,22 @@
 name: WoWChat
-version: BETA-0.5
+version: 0.5.2
 main: me.opkarol.main.Main
-description: WoWChat - THE WORDS UPDATE
+description: WoWChat - THE RPG UPDATE
 author: OpKarol
 softdepend: [PlaceholderAPI]
 
 commands:
   chat:
   spy:
+  channel:
 
 permissions:
-  wow.chat.bypass:
+  wowchat.bypass:
     description: Bypassing /chat off
     default: op
-  wow.chat.admin:
+  wowchat.admin:
     description: The ability to manage the chat
     default: op
-  wow.chat.bypass.delay:
+  wowchat.bypass.delay:
     description: Bypassing chat delay
     default: op

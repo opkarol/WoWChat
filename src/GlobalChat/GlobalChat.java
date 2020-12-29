@@ -37,6 +37,7 @@ public class GlobalChat implements Listener {
         Player p = e.getPlayer();
         map.put(p.getDisplayName(), false);
         String messageUpper = e.getMessage().toUpperCase();
+        if(Main.plugin.getConfig().getBoolean("GlobalChat.Enabled") == true){
         if (messageUpper.startsWith(GLOBAL) || Channel.get(p.getDisplayName()) == 0 && !(messageUpper.startsWith(LOCAL))){
             if (chat == true) {
                 if (canPlayerWrite == true) {
@@ -98,6 +99,7 @@ public class GlobalChat implements Listener {
             }
         }
     }
+}
 }
 
 

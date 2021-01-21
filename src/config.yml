@@ -9,7 +9,9 @@ ChatDelayInSeconds: 3
 #ChatDelayInSeconds - seconds for ChatDelay
 #If Chat Delay is disabled, this doesn't work
 
-ChatFormatting: true
+ColorCodes:
+  Enabled: true
+  CustomPrefix: '&'
 #Permission: 'wow.chat.colorcodes'
 #If this option is true, you can use BuiltIn feature: ChatFormatting:
 #Your message can be: &7&lChat&b&lFormatting&n!
@@ -44,7 +46,7 @@ Error: '&c&lERROR >> '
 Use: '&c&lUsage: &7/chat <off,on,clear,reload,help>'
 #This message will show when player(admin) write /chat
 
-ChannelUse: '&c&lUsage: &7/channel <global,local,player,admin>'
+ChannelUse: '&c&lUsage: &7/channel <global,local>'
 #This message will show when player(admin) write /chat
 
 Permission: '&7&lYou need %permission% to do it.'
@@ -97,9 +99,12 @@ messages:
 
 kickoncensor: false
 kickmessage: '&c&lYou are kicked for writing: &7&l%WORD%!'
+customcommandenable: true
 customcommand: 'mute %PLAYER% 5m'
-#Set '' for nothing
 #This command is making from Console, so its can be every command :)
+
+Period:
+  Enable: true
 
 
 AdminChat: '&c&lAC &7- &6&l%PLAYER%&7: &f&l%MESSAGE%'
@@ -107,34 +112,6 @@ AdminChat: '&c&lAC &7- &6&l%PLAYER%&7: &f&l%MESSAGE%'
 ##############################################
 #              IN NEXT UPDATES               #
 ##############################################
-
-#I want add this commands in nexts update, please be patient!
-AutoMessagesOn:
-AutoMessagesInterval:
-AutoMessages:
-  Text1:
-  Text2:
-  Text3:
-  Text4:
-  Text5:
-  Text6:
-
-Join:
-  enable: false
-JoinMessage:
-  Join1: '' #Permission: wowchat.custom.Join1, you can give this permission to OWNER, and change to him prefix
-  Join2: '' #Permission: wowchat.custom.Join2, you can give this permission to AD,OM, and change to him prefix
-  Join3: '' #Permission: wowchat.custom.Join3, you can give this permission to MOD, and change to him prefix
-  Join4: '' #Permission: wowchat.custom.Join4, you can give this permission to HELPER, and change to him prefix
-  Join5: '' #Permission: wowchat.custom.Join5, you can give this permission to MEMBER, and change to him prefix
-Leave:
-  enable: false
-LeaveMessage:
-  Leave1: '' #Permission: wowchat.custom.Leave1, you can give this permission to OWNER, and change to him prefix
-  Leave2: '' #Permission: wowchat.custom.Leave2, you can give this permission to ADMIN, and change to him prefix
-  Leave3: '' #Permission: wowchat.custom.Leave3, you can give this permission to MOD, and change to him prefix
-  Leave4: '' #Permission: wowchat.custom.Leave4, you can give this permission to HELPER, and change to him prefix
-  Leave5: '' #Permission: wowchat.custom.Leave5, you can give this permission to MEMBER, and change to him prefix
 
 ChannelSelection:
   Enabled: false
@@ -189,7 +166,7 @@ GlobalChat:
 #                 PLUGIN                     #
 ##############################################
 
-#         WowChat - inspired by every chat's plugin
+#         OpChat - inspired by every chat's plugin
 #/////////////////////////////////////////////////////////////
 #               Created and edited by: OpKarol
 #/////////////////////////////////////////////////////////////

@@ -1,6 +1,7 @@
 name: WoWChat
+api-version: 1.16
 version: 0.5.2
-main: me.opkarol.main.Main
+main: me.opkarol.main.opchat
 description: WoWChat - THE RPG UPDATE
 author: OpKarol
 softdepend: [PlaceholderAPI]
